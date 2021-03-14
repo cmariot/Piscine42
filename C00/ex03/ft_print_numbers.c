@@ -2,8 +2,18 @@
 
 void	ft_print_numbers(void)
 {
-	char numbers[10];
-
-	numbers = "0123456789";
-	write(1, &numbers, 10);
+	char number;
+	number = '0';
+	while (number <= '9')
+	{
+		write(1, &number, 10);
+		number++;
+	}
 }
+
+int	main()
+{
+	ft_print_numbers();
+	return(0);
+}
+

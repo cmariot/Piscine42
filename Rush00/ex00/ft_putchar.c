@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/14 08:32:11 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/14 08:33:25 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/13 14:19:30 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/14 08:55:35 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+void	ft_putchar(char c)
 {
-	char letter;
-
-	letter = 'z';
-	while (letter != 96)
-	{
-		write(1, &letter, 1);
-		letter--;
-	}
+	write(1, &c, 1);
 }

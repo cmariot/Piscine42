@@ -1,21 +1,14 @@
 #include <unistd.h>
 
-void ft_is_negative(int n);
-
-int main() 
+void	ft_is_negative(int n)
 {
-	ft_is_negative(-3);
-	ft_is_negative(0);
-	ft_is_negative(3);
-	return(0);
-}
+	char negative[1];
+	char positive[1];
 
-void ft_is_negative(int n)
-{
-	char negative[1] = "N";
-	char positive[1] = "P";
-	
-	if (n <= 0) 
+	negative = "N";
+	positive = "P";
+
+	if (n <= 0)
 	{
 		write(1, &negative, 1);
 	}
@@ -23,5 +16,4 @@ void ft_is_negative(int n)
 	{
 		write(1, &positive, 1);
 	}
-
 }

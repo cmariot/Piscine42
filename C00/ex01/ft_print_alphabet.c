@@ -1,15 +1,9 @@
 #include <unistd.h>
 
-void ft_print_alphabet(void);
-
-int main() 
+void	ft_print_alphabet(void)
 {
-	ft_print_alphabet();
-	return(0);
+	char letters[26];
+
+	letters = "abcdefghijklmnopqrstuvwxyz";
+	write(1, &letters, 26);
 }
-
-void ft_print_alphabet(void)
-{
-	char letters[26] = "abcdefghijklmnopqrstuvwxyz";
-        write(1, &letters, 26);
-}	

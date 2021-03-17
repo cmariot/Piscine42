@@ -1,0 +1,5 @@
+Credentials cache: API:243F1523-76BF-4CAA-BDA9-7E920E9D6145
+        Principal: cmariot@42.FR
+
+  Issued                Expires               Principal
+Mar 12 07:24:50 2021  Mar 19 07:24:42 2021  krbtgt/42.FR@42.FR

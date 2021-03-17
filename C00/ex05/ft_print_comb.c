@@ -1,4 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 12:22:10 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/16 07:52:05 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_display(int i, int j, int k)
 {
@@ -10,11 +27,6 @@ void	ft_display(int i, int j, int k)
 		ft_putchar(44);
 		ft_putchar(32);
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
 }
 
 void	ft_print_comb(void)
@@ -41,5 +53,4 @@ void	ft_print_comb(void)
 		}
 		i = i + 1;
 	}
-	ft_putchar(10);
 }

@@ -1,25 +1,22 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 08:47:45 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/17 13:32:42 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putstr(char *str)
+#include <stdio.h>
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int i;
-	char c;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		c = str[i];
-		write(1, &c, 1);
-		i++;
-	}
-}
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{	
-	int i;
-
-	i = 0;
-	while ((src[i] != '\0') && (i < n ))
+	while ((src[i] != '\0') && (i < n))
 	{
 		dest[i] = src[i];
 		i++;
@@ -31,16 +28,3 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
-
-int main(void)
-{
-	unsigned int stop;
-	stop = 5;
-	char source[13] = "Hello World !";
-	char destination[15];
-	ft_putstr(destination);
-	ft_strncpy(destination, source, stop);
-	ft_putstr(destination);
-	return (0);
-}
-

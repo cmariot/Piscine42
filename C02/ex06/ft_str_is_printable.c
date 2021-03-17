@@ -1,20 +1,16 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 13:21:18 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/16 13:21:21 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putstr(char *str)
-{
-	int i;
-	char c;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		c = str[i];
-		write(1, &c, 1);
-		i++;
-	}
-}
-
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int i;
 	int resultat;
@@ -23,7 +19,7 @@ int	ft_str_is_alpha(char *str)
 	resultat = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= '!') && (str[i] <= '~'))
+		if ((str[i] >= 32) && (str[i] <= '~'))
 		{
 		}
 		else
@@ -32,26 +28,12 @@ int	ft_str_is_alpha(char *str)
 		}
 		i++;
 	}
-	char affichage_resultat;
-	affichage_resultat = resultat + '0';
-	write(1, &affichage_resultat, 1);
-	if (resultat > 0)
-	{
-		return(0);
-	}
-	else if (i == 0)
+	if ((resultat == 0) || (i == 0))
 	{
 		return (1);
 	}
 	else
 	{
-		return(1);
+		return (0);
 	}
-}
-
-int main(void)
-{
-	char source[13] = "sufb34ssdSDu";
-	ft_str_is_alpha(source);
-	return (0);
 }

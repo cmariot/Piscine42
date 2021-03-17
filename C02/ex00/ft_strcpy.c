@@ -1,21 +1,17 @@
-#include <unistd.h>
-
-void	ft_putstr(char *str)
-{
-	int i;
-	char c;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		c = str[i];
-		write(1, &c, 1);
-		i++;
-	}
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 08:40:24 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/17 15:55:22 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
-{	
+{
 	int i;
 
 	i = 0;
@@ -24,20 +20,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
-}
-
-int main(void)
-{
-	char source[13] = "Hello World !";
-	char destination[15];
-	ft_putstr(destination);
-	ft_strcpy(destination, source);
-	ft_putstr(destination);
-	return (0);
 }

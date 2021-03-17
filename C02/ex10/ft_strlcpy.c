@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/17 07:55:00 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/17 10:24:05 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
@@ -29,26 +41,26 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	dest[i] = '\0';
 
-	if (size == 0)
-		return (i);
 
-	else
-		return size +i ;
+	return (size + 1);
+
 }
 
 int main(void)
 {
 	char source[10] = "toto +tata";
     char destination[10] = "too +tata";
-    unsigned int taille_destination = 5;
-	char source2[10] = "toto +tata";
-    char destination2[9] = "too +tata";
-    unsigned int taille_destination2 = 5;
+    unsigned int taille_destination = 10;
 
-	// ft_strlcpy(destination, source, taille_destination);
-	// ft_putstr(destination);
-	// ft_putstr("\n\n");
+//	char source2[10] = "toto +tata";
+//   char destination2[10] = "too +tata";
+//    unsigned int taille_destination2 = 10;
+
+	ft_putstr(destination);
+	ft_putstr("\n\n");
+	ft_putstr(destination);
+	ft_putstr("\n\n");
     printf("perso: %d\n", ft_strlcpy(destination, source, taille_destination));
-    printf("relle:%zu\n", strlcpy(destination2, source2, taille_destination2));
+    printf("relle: %zu\n", strlcpy(destination, source, taille_destination));
 	return (0);
 }

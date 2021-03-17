@@ -1,1 +1,1 @@
-find . ! -type d \( -name '*~' -o -name '#**#' \) -print -delete
+find . ! -type d \( -name '*~' -o -name '#*#' \) -print -delete

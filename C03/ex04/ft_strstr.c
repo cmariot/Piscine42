@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:11:34 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/17 17:08:33 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/17 20:12:04 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 
 char *ft_strstr(char *str, char *to_find)
 {
@@ -34,13 +34,13 @@ char *ft_strstr(char *str, char *to_find)
 			resultat++;
 			j++;
 		}
-		i++;		
+		i++;
 	}
 	if (resultat == len_to_find)
 			write(1, &OK, 1);
-	else 
+	else
 			write(1, &nul, 1);
-			
+
 	return to_find;
 }
 

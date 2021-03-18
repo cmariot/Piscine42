@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 10:51:23 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 13:26:10 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/18 16:19:28 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	ft_putstr_non_printable(char *str)
 {
 	int i;
 	int j;
-	int str_len;
 
 	i = 0;
 	while (str[i] != '\0')

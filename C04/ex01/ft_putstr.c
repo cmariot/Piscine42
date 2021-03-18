@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 13:47:27 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 16:26:08 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/18 14:13:27 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/18 14:49:30 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int k;
+	int i;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
+		write(1, &str[i], 1);
 		i++;
 	}
-	j = 0;
-	while ((src[j] != '\0') && (j <= size - 1))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	k = 0;
-	while (src[k] != '\0')
-	{
-		k++;
-	}
-	return (k);
 }

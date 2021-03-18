@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 13:47:27 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 16:26:08 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/18 13:55:11 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/18 14:06:06 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_strlen(char *str)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int k;
+	int i;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	j = 0;
-	while ((src[j] != '\0') && (j <= size - 1))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	k = 0;
-	while (src[k] != '\0')
-	{
-		k++;
-	}
-	return (k);
+	return (i - 1);
 }

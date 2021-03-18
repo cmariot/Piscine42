@@ -6,7 +6,7 @@
 /*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 08:47:45 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 12:02:20 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/18 16:18:51 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while ((src[i] != '\0') && (i < n))

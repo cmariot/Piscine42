@@ -6,14 +6,14 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:56:58 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 13:47:01 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/18 16:24:59 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int n)
 {
-	int i;
-	int j;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
 	while (dest[i] != '\0')

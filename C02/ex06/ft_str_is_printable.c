@@ -6,17 +6,15 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 13:21:18 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/16 13:21:21 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/18 12:22:07 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_printable(char *str)
 {
 	int i;
-	int resultat;
 
 	i = 0;
-	resultat = 0;
 	while (str[i] != '\0')
 	{
 		if ((str[i] >= 32) && (str[i] <= '~'))
@@ -24,16 +22,9 @@ int	ft_str_is_printable(char *str)
 		}
 		else
 		{
-			resultat++;
+			return (0);
 		}
 		i++;
 	}
-	if ((resultat == 0) || (i == 0))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (1);
 }

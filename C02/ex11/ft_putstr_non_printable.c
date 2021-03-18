@@ -1,47 +1,64 @@
- int	ft_str_is_printable(char *str)
-{
-	int i;
-	int resultat;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/18 10:51:23 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/18 13:26:10 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 0;
-	resultat = 0;
-	while (str[i] != '\0')
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+char	ft_convert_to_hexa(char c)
+{
+	char *table_hexa;
+
+	table_hexa = "0123456789abcdef";
+	if (c >= 16)
 	{
-		if ((str[i] >= 32) && (str[i] <= '~'))
-		{
-		}
-		else
-		{
-			resultat++;
-		}
-		i++;
-	}
-	if ((resultat == 0) || (i == 0))
-	{
-		return (1);
+		ft_putchar('\\');
+		ft_putchar(table_hexa[c / 16]);
+		ft_putchar(table_hexa[c % 16]);
 	}
 	else
 	{
-		return (0);
+		ft_putchar('\\');
+		ft_putchar(table_hexa[0]);
+		ft_putchar(table_hexa[c / 1]);
 	}
+	return (c);
 }
 
- void ft_putstr_non_printable(char *str)
- {
-     int i;
-
-     i = 0;
-     while (str[i] != '\0')
-     {
-         if (str[i] == 92)
-         {
-             str[i + 1] = '0';
-         }
-         i++;
-     }
- }
-
-int main()
+void	ft_putstr_non_printable(char *str)
 {
-    char string[21] = "Coucou\ntu vas bien ?";
+	int i;
+	int j;
+	int str_len;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (j <= i - 1)
+	{
+		if ((str[j] <= 31) || (str[j] == 127))
+		{
+			ft_convert_to_hexa(str[j]);
+		}
+		else
+		{
+			write(1, &str[j], 1);
+		}
+		j++;
+	}
 }

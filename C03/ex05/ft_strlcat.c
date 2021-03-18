@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 08:47:45 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 12:02:20 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/18 13:47:27 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/18 13:49:30 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int i;
+	int j;
+	int k;
 
 	i = 0;
-	while ((src[i] != '\0') && (i < n))
-	{
-		dest[i] = src[i];
-		i++;
-	}
 	while (dest[i] != '\0')
 	{
-		dest[i] = '\0';
 		i++;
 	}
-	return (dest);
+	j = 0;
+	while ((src[j] != '\0') && (j <= size - 1))
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	k = 0;
+	while (src[k] != '\0')
+	{
+		k++;
+	}
+	return (k);
 }

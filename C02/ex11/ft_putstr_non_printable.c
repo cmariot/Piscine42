@@ -33,10 +33,11 @@
      i = 0;
      while (str[i] != '\0')
      {
-         if (ft_str_is_printable(str[i]) == 0)
+         if (str[i] == 92)
          {
-             str[i] = 
+             str[i + 1] = '0';
          }
+         i++;
      }
  }
 

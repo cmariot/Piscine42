@@ -3,24 +3,21 @@
 // It's equivalent to (int)strtol(str, (char **)NULL, 10);
 int	ft_atoi(char *str)
 {
+	int i;
+
+	i = 0;
+	while (str[i] == 32)
+	{
+		i++;
+	}
+	while ((str[i] == '-') || (str[i] == '+')
 
 }
 
-void ft_putchar(char ptr)
+int	main(void)
 {
-    write(1, &ptr, 1);
-}
-
-void ft_putstr(char *str)
-{
-    int i;
-
-    i = 0;
-    while(str[i] != '\0')
-    {
-        ft_putchar(str[i]);
-        index++;
-    }
-}
-
-
+	char *str;
+	str = "   ---+--+1234ab56";
+	ft_atoi(str);
+	return (0);
+}	

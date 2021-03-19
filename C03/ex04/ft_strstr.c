@@ -6,7 +6,7 @@
 /*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:11:34 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/18 16:25:40 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/19 16:27:06 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int difference;
-	unsigned int i;
+	int				difference;
+	unsigned int	i;
 
 	i = 0;
 	while (((s1[i] != '\0') || (s2[i] != '\0')) && (i <= n))
@@ -40,8 +40,8 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int i;
-	unsigned int to_find_len;
+	unsigned int	i;
+	unsigned int	to_find_len;
 
 	i = 0;
 	to_find_len = 0;
@@ -51,7 +51,7 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	if (to_find_len == 0)
 	{
-		return (to_find);
+		return (str);
 	}
 	while (str[i] != '\0')
 	{
@@ -61,16 +61,5 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (0);
-}
-
-int		main(void)
-{
-	char *needle;
-	char *haystack;
-
-	needle = "me";
-	haystack = "You can find me.";
-	ft_strstr(haystack, needle);
 	return (0);
 }

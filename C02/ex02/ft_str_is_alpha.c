@@ -13,10 +13,8 @@
 int	ft_str_is_alpha(char *str)
 {
 	int i;
-	int resultat;
 
 	i = 0;
-	resultat = 0;
 	while (str[i] != '\0')
 	{
 		if ((str[i] >= 'A') && (str[i] <= 'Z'))

@@ -22,42 +22,27 @@ char	ft_convert_to_hexa(char c)
 	char *table_hexa;
 
 	table_hexa = "0123456789abcdef";
-	if (c >= 16)
-	{
-		ft_putchar('\\');
-		ft_putchar(table_hexa[c / 16]);
-		ft_putchar(table_hexa[c % 16]);
-	}
-	else
-	{
-		ft_putchar('\\');
-		ft_putchar(table_hexa[0]);
-		ft_putchar(table_hexa[c / 1]);
-	}
+	ft_putchar('\\');
+	ft_putchar(table_hexa[c / 16]);
+	ft_putchar(table_hexa[c % 16]);
 	return (c);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
 	int i;
-	int j;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		i++;
-	}
-	j = 0;
-	while (j <= i - 1)
-	{
-		if ((str[j] <= 31) || (str[j] == 127))
+		if ((str[i] < 32 && str[i] > 0) || str[i] == 127)
 		{
-			ft_convert_to_hexa(str[j]);
+			ft_convert_to_hexa(str[i]);
 		}
 		else
 		{
-			write(1, &str[j], 1);
+			write(1, &str[i], 1);
 		}
-		j++;
+		i++;
 	}
 }

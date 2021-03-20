@@ -10,32 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int				difference;
 	unsigned int	i;
 
 	i = 0;
-	while (((s1[i] != '\0') || (s2[i] != '\0')) && (i <= n))
+	if (n == 0)
 	{
-		if (s1[i] != s2[i])
-		{
-			if (s1[i] > s2[i])
-			{
-				difference = (s1[i] - s2[i]);
-				return (difference);
-			}
-			else if (s1[i] < s2[i])
-			{
-				difference = (s1[i] - s2[i]);
-				return (difference);
-			}
-		}
+		return (0);
+	}
+	while (s1[i] != s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	{
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
 
 char	*ft_strstr(char *str, char *to_find)
@@ -55,9 +43,9 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	while (str[i] != '\0')
 	{
-		if (ft_strncmp(&str[i], to_find, (to_find_len - 1)) == 0)
+		if (ft_strncmp(&str[i], to_find, to_find_len) == 0)
 		{
-			return (&to_find[i]);
+			return (&str[i]);
 		}
 		i++;
 	}

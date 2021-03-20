@@ -27,10 +27,3 @@ void	ft_putnbr(int nb)
 		ft_putchar((long_nb % 10) + '0');
 	}
 }
-
-int	main()
-{
-	int nombre;
-	nombre = -2147483648;
-	ft_putnbr(nombre);
-}

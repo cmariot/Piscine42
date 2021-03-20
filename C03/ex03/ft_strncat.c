@@ -21,7 +21,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int n)
 		i++;
 	}
 	j = 0;
-	while ((src[j] != '\0') && (j <= (n - 1)))
+	while (src[j] != '\0' && j < n)
 	{
 		dest[i] = src[j];
 		j++;

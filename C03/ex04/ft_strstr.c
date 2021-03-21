@@ -6,11 +6,11 @@
 /*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:11:34 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/19 16:27:06 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/20 08:43:37 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 

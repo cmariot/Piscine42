@@ -6,26 +6,27 @@
 /*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 07:55:00 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/20 07:47:13 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/22 12:59:07 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
-	unsigned int	j;
+	int				src_len;
 
-	j = 0;
-	while (src[j] != '\0')
-	{
-		j++;
-	}
 	i = 0;
-	while (src[i] != '\0' && i < size - 1)
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] && (i < (n - 1)))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = '\0';
-	return (j);
+	return (src_len);
 }

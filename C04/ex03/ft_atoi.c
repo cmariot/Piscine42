@@ -48,7 +48,7 @@ int	ft_atoi(char *str)
 			minus_counter = 1;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + (str[i] - 48);
+		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
 	return (nb * minus_counter);

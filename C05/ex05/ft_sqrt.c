@@ -10,27 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
 int	ft_sqrt(int nb)
 {
 	int sqrt;
-	if (nb % nb == 0)
+	sqrt = 0;
+	if (nb > 0)
 	{
-		
-		return (sqrt);
+		while ((sqrt * sqrt != nb) && (sqrt < nb))
+		sqrt++;
 	}
-	else
-	{
+	if (sqrt == nb)
 		return (0);
-	}
-}
-
-int	main()
-{
-	int nb;
-	nb = 9;
-	printf("%d\n", ft_sqrt(nb));
-	return (0);
+	else
+		return (sqrt);
 }

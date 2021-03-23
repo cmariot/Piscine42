@@ -17,30 +17,44 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)                                     
 {
-	long int	long_nb;
-	int			nb2;
+	int			diviseur;
+	int			result;
 	int			base_len;
+	int			j;
+	long int	long_nb;
 
+	long_nb = nbr + 0;
 	base_len = 0;
-	while (base[base_len])
+	while (base[base_len] != '\0')
+	{
+		if (base[base_len] == '+' || base[base_len] == '-')
+			return;
+		j = 0;
+		while (base[j] != '\0')
+		{
+			if (base[base_len] == base[j])
+				return;
+			j++;
+		}
 		base_len++;
-	long_nb = 0 + nbr;
-	if (long_nb < 0)
+	}
+	if (base_len <= 1)
+			return;
+	if (nbr < 0)
 	{
 		ft_putchar('-');
-		long_nb = -long_nb;
+		long_nb = -(long_nb);
 	}
-	if ((long_nb >= 0) && (long_nb <= 9))
+	diviseur = 1;
+	while ((long_nb / diviseur) >= base_len)
+		diviseur = diviseur * base_len;
+	while (diviseur > 0)
 	{
-		ft_putchar('0' + long_nb);
-	}
-	else
-	{
-		nb2 = long_nb / base_len;
-		ft_putnbr_base(nb2, base);
-		ft_putchar((long_nb % base_len) + '0');
+		result = (long_nb / diviseur) % base_len;
+		ft_putchar(base[result]);
+		diviseur = diviseur / base_len;
 	}
 }
 
@@ -49,8 +63,7 @@ int	main(void)
 	int nb;
 	char *base;
 
-	nb = 16;
-	base = "01";
+	nb = 2147483647;
+	base = "+1234567890";
 	ft_putnbr_base(nb, base);
-	ft_putchar('\n');
 }

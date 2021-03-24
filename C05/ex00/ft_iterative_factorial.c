@@ -6,21 +6,17 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:24:30 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/23 08:28:00 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/24 10:36:04 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int		ft_iterative_factorial(int nb)
 {
-	int factorial;
-	long int long_nb;
+	int			factorial;
+	long int	long_nb;
 
 	if (nb < 0)
-	{
 		return (0);
-	}
 	else
 	{
 		factorial = 1;
@@ -32,13 +28,4 @@ int		ft_iterative_factorial(int nb)
 		}
 		return (factorial);
 	}
-}
-
-int main(void)
-{
-	int i;
-
-	i = 12;
-	printf("%d\n", ft_iterative_factorial(i));
-	return (0);
 }

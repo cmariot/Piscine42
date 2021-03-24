@@ -6,20 +6,21 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 17:07:31 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/23 17:38:35 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/24 15:03:04 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
 	int sqrt;
+
 	sqrt = 0;
 	if (nb > 0)
 	{
-		while ((sqrt * sqrt != nb) && (sqrt < nb))
-		sqrt++;
+		while ((sqrt * sqrt != nb) && (sqrt < nb) && (sqrt < 46340))
+			sqrt++;
 	}
-	if (sqrt == nb)
+	if (sqrt * sqrt != nb)
 		return (0);
 	else
 		return (sqrt);

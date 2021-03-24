@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:05:35 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/24 11:06:21 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/24 21:25:37 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putstr(char *str)
 
 int		main(int argc, char **argv)
 {
-	if (argc >= 0)
+	if (argc > 1)
 	{
 		ft_putstr(argv[0]);
 		ft_putchar('\n');

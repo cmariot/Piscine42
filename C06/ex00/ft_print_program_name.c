@@ -6,7 +6,7 @@
 /*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:05:35 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/24 21:25:37 by charles          ###   ########.fr       */
+/*   Updated: 2021/03/25 11:41:56 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putstr(char *str)
 
 int		main(int argc, char **argv)
 {
-	if (argc > 1)
+	if (argc >= 0)
 	{
 		ft_putstr(argv[0]);
 		ft_putchar('\n');

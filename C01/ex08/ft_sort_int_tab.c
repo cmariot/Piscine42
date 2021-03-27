@@ -19,7 +19,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	int stock;
 
 	i = 0;
-	stock = 48;
+	stock = 0;
 	while (i < size)
 	{
 		j = 0;

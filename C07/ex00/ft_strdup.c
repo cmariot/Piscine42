@@ -42,11 +42,10 @@ char	*ft_strdup(char *src)
 	int		src_len;
 	char	*cpy;
 	int		i;
-	
+
 	src_len = ft_strlen(src);
-	cpy = (char *)malloc(sizeof(*cpy) * (src_len + 1));
-	if (cpy == NULL)
-			return NULL;
+	if (!(cpy = (char *)malloc(sizeof(char) * (src_len + 1))))
+		return NULL;
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -66,6 +65,6 @@ int		main(void)
 	copy = ft_strdup(str);
 	ft_putstr(copy);
 	free(copy);
-	vopy = NULL;
+	copy = NULL;
 	return (0);
 }

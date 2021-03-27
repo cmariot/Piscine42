@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 07:49:11 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/24 07:49:46 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/26 08:21:01 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(int n)
 {
-	long int	long_nb;
-	int			nb2;
+	long int	nb;
 
-	long_nb = 0 + nb;
-	if (long_nb < 0)
+	nb = n;
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		long_nb = -long_nb;
+		nb = -nb;
 	}
-	if ((long_nb >= 0) && (long_nb <= 9))
+	if ((nb >= 0) && (nb <= 9))
 	{
-		ft_putchar('0' + long_nb);
+		ft_putchar(nb + '0');
 	}
 	else
 	{
-		nb2 = long_nb / 10;
-		ft_putnbr(nb2);
-		ft_putchar((long_nb % 10) + '0');
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
 	}
 }

@@ -101,14 +101,14 @@ char	*ft_strstr(char *str, char *to_find)
 	while (to_find[to_find_len] != '\0')
 		to_find_len++;
 	if (to_find_len == 0)
-		return (0);
+		return ("Dict Error\n");
 	while (str[i] != '\0')
 	{
 		if (ft_strncmp(&str[i], to_find, to_find_len) == 0)
 			return (&str[i]);
 		i++;
 	}
-	return (0);
+	return ("Dict Error\n");
 }
 
 char *get_nbr_name(char *str)
@@ -152,9 +152,9 @@ char *find_ui_line_in_buf(char *buf, char *value_to_convert)
 
 
     //si non trouve, convertir int puis diviser & modulo
-    if (found_line == NULL)
+    if (ft_strncmp(ft_strstr(buf, value_to_convert), "Dict Error\n", ft_strlen(ft_strstr(buf, value_to_convert))) == 0)
     {
-        printf("error");
+        return ("Dict Error\n");
     }
 
 
@@ -190,7 +190,6 @@ int		open_dictionary(char *path, char *value_to_convert)
     read_return = read(file_descriptor, buf, BUF_SIZE);
     buf[read_return] = '\0';
     //faire varier taille buffer en fonction des ajouts dans le dictionnaire ?
-    printf("taille buffer = %d\n", read_return);
 
     nbr_name = find_ui_line_in_buf(buf, value_to_convert);
     ft_putstr(nbr_name);
@@ -238,5 +237,6 @@ int     main(int argc, char **argv)
         }
         return (0);
     }
+    ft_putstr("Error\n");
     return (0);
 }

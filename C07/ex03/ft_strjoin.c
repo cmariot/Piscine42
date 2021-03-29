@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 09:25:11 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 14:18:42 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/29 14:22:24 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ int	main(void)
 	char *sep;
 	char *verif;
 
-	sep = " -";	
+	sep = "-";	
 	size = 3;
-	strs[0] = "to";
+	strs[0] = "tototo";
 	strs[1] = "ta";
 	strs[2] = "ti";
 	verif = ft_strjoin(size, strs, sep);

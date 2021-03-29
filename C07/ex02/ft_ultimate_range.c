@@ -11,7 +11,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 		*range = (*void);
 		return (0);
 	}
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
+	if (!(tab = malloc(sizeof(int) * (max - min))))
 		return (-1);
 	i = 0;
 	while (min < max)
@@ -29,12 +29,12 @@ int		main(void)
 	int max;
 	int **range;
 
-	if (!(range = (int **)malloc(sizeof(**tab) * (max - min))))
+	if (!(range = malloc(sizeof(int) * (max - min))))
 		return (-1);
-	*range = NULL;
+	*range = (*void);
 	min = 3;
 	max = 6;
-	range = 
+	range = 3;
 	ft_ultimate_range(range, min, max);
 	return (0);
 }

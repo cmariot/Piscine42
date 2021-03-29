@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 09:25:11 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 14:22:24 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/29 14:38:58 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,23 @@ char *ft_strjoin(int size, char **strs, char *sep)
 	int total_len;
 	int sep_len;
 	char *str;
-
+	
+	if (size == 0)
+	{
+		if (!(str = malloc(sizeof(char) * (0))))
+			return NULL;
+		return (str);
+	}
 	i = 0;
 	total_len = 0;
 	str = "";
 	while (i < size)
-	{
-		total_len = total_len + ft_strlen(strs[i]);
-		i++;
-	}
+		total_len = total_len + ft_strlen(strs[i++]);
 	sep_len = ft_strlen(sep);
 	total_len = total_len + sep_len * (size - 1);
-	printf("%d\n", total_len);
 	if (!(str = malloc(sizeof(char) * (total_len + 1))))
 			return NULL;
+	str[total_len] = '\0';
 	i = 0;
 	while (i < size)
 	{
@@ -100,12 +103,11 @@ int	main(void)
 	char *verif;
 
 	sep = "-";	
-	size = 3;
+	size = 2;
 	strs[0] = "tototo";
 	strs[1] = "ta";
 	strs[2] = "ti";
 	verif = ft_strjoin(size, strs, sep);
-	ft_putstr(verif);
 	printf("%s\n", verif);
 	free(verif);
 	return (0);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/29 08:14:06 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/29 09:24:20 by cmariot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -5,22 +17,34 @@ int		ft_ultimate_range(int **range, int min, int max)
 {
 	int *tab;
 	int i;
+	int range_size;
 
 	if (min >= max)
 	{
-		*range = (*void);
+		range = NULL;
 		return (0);
 	}
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
+	if (!(tab = malloc(sizeof(int) * (max - min))))
 		return (-1);
-	i = 0;
-	while (min < max)
+	i = min;
+	while (i < max)
 	{
-		tab[i] = min + i;
+		tab[i] = i + 1;
 		printf("%d\n", tab[i]);
 		i++;
 	}
-	return (i);
+	if (!(range = malloc(sizeof(int*) * (max - min))))
+		return (-1);
+	i = min;
+	range_size = 0;
+	while (i < max)
+	{
+		range[i] = &tab[i];
+		range_size++;
+		printf("%p\n", range[i]);
+		i++;
+	}
+	return (range_size);
 }
 
 int		main(void)
@@ -28,13 +52,11 @@ int		main(void)
 	int min;
 	int max;
 	int **range;
-
-	if (!(range = (int **)malloc(sizeof(**tab) * (max - min))))
-		return (-1);
-	*range = NULL;
-	min = 3;
-	max = 6;
-	range = 
-	ft_ultimate_range(range, min, max);
+	
+	min = 4;
+	max = 4;
+	range = NULL;
+	printf("%d\n", ft_ultimate_range(range, min, max));
 	return (0);
 }
+

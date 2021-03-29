@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 15:45:44 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/26 16:03:40 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/29 08:13:53 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		*ft_range(int min, int max)
 	while (i < range)
 	{
 		tab[i] = min + i;
-		printf("%d\n", tab[i]);
 		i++;
 	}
 	return (tab);
@@ -39,10 +38,19 @@ int		main(void)
 	int min;
 	int max;
 	int *tab;
+	int i;
+	int range;
 
-	min = 3;
-	max = 6;
+	min = 0;
+	max = 11;
+	range = max - min;
 	tab = ft_range(min, max);
+    i = 0;
+	while (i < range)
+    {
+        printf("%d\n", tab[i]);
+        i++;
+    }
 	free(tab);
 	return (0);
 }

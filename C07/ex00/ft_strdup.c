@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:01:25 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/25 10:27:41 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/29 08:09:32 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	src_len = ft_strlen(src);
-	if (!(cpy = (char *)malloc(sizeof(char) * (src_len + 1))))
+	if (!(cpy = malloc(sizeof(char) * (src_len + 1))))
 		return NULL;
 	i = 0;
 	while (src[i] != '\0')
@@ -65,6 +65,6 @@ int		main(void)
 	copy = ft_strdup(str);
 	ft_putstr(copy);
 	free(copy);
-	copy = NULL;
+	ft_putstr(copy);
 	return (0);
 }

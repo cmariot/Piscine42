@@ -6,14 +6,13 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 17:03:02 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 17:53:49 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/30 08:23:30 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value)		if (Value < 0) \
-							Value = - Value;
+# define ABS(Value)		(Value < 0) ? -Value : Value
 
 #endif

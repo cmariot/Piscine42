@@ -6,19 +6,15 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 09:25:11 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 15:10:24 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/30 08:10:01 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-<<<<<<< HEAD
-#include <unistd.h>
-=======
->>>>>>> ee1c1adb0f326ad1bb92e430e6d7cfc24c400374
 
 int		ft_strlen(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (*str++)
@@ -28,8 +24,8 @@ int		ft_strlen(char *str)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (dest[i])
@@ -47,43 +43,35 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
+int		ft_dest_len(char **strs, char *sep, int size)
+{
+	int total_len;
+	int i;
+
+	total_len = 0;
+	i = 0;
+	while (i < size)
+		total_len = total_len + 1 + ft_strlen(strs[i++]);
+	total_len = total_len + (ft_strlen(sep) * (size - 1) + 1);
+	return (total_len);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-<<<<<<< HEAD
 	int		i;
 	int		total_len;
 	char	*str;
 
-	if (!(str = malloc(sizeof(char))))
-		return (NULL);
-	if (size == 0)
-=======
-	int i;
-	int total_len;
-	char *str;
-	
 	if (size <= 0)
 	{
 		str = malloc(sizeof(char));
 		*str = '\0';
->>>>>>> ee1c1adb0f326ad1bb92e430e6d7cfc24c400374
 		return (str);
-	i = 0;
-	total_len = 0;
-	while (i < size)
-<<<<<<< HEAD
-		total_len = total_len + ft_strlen(strs[i++]);
-	total_len = total_len + ft_strlen(sep) * (size - 1);
-	if (!(str = malloc(sizeof(char) * (total_len + 1))))
-		return (NULL);
-	str[total_len] = '\0';
-=======
-		total_len = total_len + 1 + ft_strlen(strs[i++]);
-	total_len = total_len + (ft_strlen(sep) * (size - 1) + 1);
+	}
+	total_len = ft_dest_len(strs, sep, size);
 	if (!(str = malloc(sizeof(char) * total_len)))
-			return NULL;
+		return (NULL);
 	*str = 0;
->>>>>>> ee1c1adb0f326ad1bb92e430e6d7cfc24c400374
 	i = 0;
 	while (i < size)
 	{
@@ -93,8 +81,4 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	return (str);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ee1c1adb0f326ad1bb92e430e6d7cfc24c400374

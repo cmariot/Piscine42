@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 17:06:14 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 17:53:45 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/30 10:11:23 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/30 11:56:14 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_abs.h"
-#include <stdio.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-int	main(void)
+typedef struct	s_stock_str
 {
-	int i;
-	i = 0;
-	printf("%d\n", ABS(i);
-	i = -2;
-	printf("%d\n", ABS(i);
-	i = 2;
-	printf("%d\n", ABS(i);
+	int size;
+	char *str;
+	char *copy;
+}				t_stock_str;
 
-}
+#endif

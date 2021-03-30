@@ -4,8 +4,7 @@
 int main()
 {
     int i;
-    i = 5;
-    i = ABS(0);
-    printf("%d", i);
+    i = -5;
+    printf("%d", ABS(i));
 }
 

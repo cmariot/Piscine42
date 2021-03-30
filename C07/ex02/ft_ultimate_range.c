@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 08:14:06 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 09:24:20 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/29 17:54:02 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,37 +26,29 @@ int		ft_ultimate_range(int **range, int min, int max)
 	}
 	if (!(tab = malloc(sizeof(int) * (max - min))))
 		return (-1);
-	i = min;
-	while (i < max)
-	{
-		tab[i] = i + 1;
-		printf("%d\n", tab[i]);
-		i++;
-	}
-	if (!(range = malloc(sizeof(int*) * (max - min))))
-		return (-1);
-	i = min;
+	i = 0;
 	range_size = 0;
 	while (i < max)
 	{
-		range[i] = &tab[i];
+		tab[i] = min + i;
 		range_size++;
-		printf("%p\n", range[i]);
 		i++;
 	}
+	range = &tab;
 	return (range_size);
 }
 
-int		main(void)
+int	main(void)
 {
+	int **range;
 	int min;
 	int max;
-	int **range;
-	
-	min = 4;
-	max = 4;
+
 	range = NULL;
+	min = 0;
+	max = 6;
+	printf("%p\n", range);
 	printf("%d\n", ft_ultimate_range(range, min, max));
+	printf("%p", range);
 	return (0);
 }
-

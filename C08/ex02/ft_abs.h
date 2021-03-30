@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 15:45:44 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/29 15:14:48 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/29 17:03:02 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/29 17:53:49 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-int		*ft_range(int min, int max)
-{
-	int range;
-	int *tab;
-	int i;
+# define ABS(Value)		if (Value < 0) \
+							Value = - Value;
 
-	if (min >= max)
-		return (NULL);
-	range = max - min;
-	if (!(tab = (int *)malloc(sizeof(*tab) * range)))
-		return (NULL);
-	i = 0;
-	while (i < range)
-	{
-		tab[i] = min + i;
-		i++;
-	}
-	return (tab);
-}
+#endif

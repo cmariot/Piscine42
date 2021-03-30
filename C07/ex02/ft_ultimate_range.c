@@ -11,22 +11,22 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_ultimate_range(int **range, int min, int max)
 {
-	int *tab;
 	int i;
-	int range_size;
+	int size;
 
 	if (min >= max)
 	{
 		range = NULL;
 		return (0);
 	}
-	if (!(tab = malloc(sizeof(int) * (max - min))))
+	size = max - min;
+	if (!(*range = malloc(sizeof(int) * size)))
 		return (-1);
 	i = 0;
+<<<<<<< HEAD
 	range_size = 0;
 	while (i < max)
 	{
@@ -52,3 +52,13 @@ int	main(void)
 	printf("%p", range);
 	return (0);
 }
+=======
+	while (min < max)
+	{
+		(*range)[i] = min;
+		min++;
+		i++;
+	}
+	return (size);
+}
+>>>>>>> ee1c1adb0f326ad1bb92e430e6d7cfc24c400374

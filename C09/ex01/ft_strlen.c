@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftboolean.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 15:41:09 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/31 11:23:41 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/16 08:32:18 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/16 08:33:02 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+int	ft_strlen(char *str)
+{
+	int i;
 
-# include <unistd.h>
-# define TRUE 1
-# define FALSE 0
-# define EVEN(nb)  (nb % 2 == 0)
-# define EVEN_MSG	"I have an even number of arguments.\n"
-# define ODD_MSG	"I have an odd number of arguments.\n"
-# define SUCCESS 0
-
-typedef int	t_bool;
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

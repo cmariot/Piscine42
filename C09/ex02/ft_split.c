@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 08:46:22 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/30 09:37:19 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/31 14:37:24 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/31 17:24:15 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_point.h"
+#include <stdlib.h>
 
-void	set_point(t_point *point)
-{
-	point->x = 42;
-	point->y = 21;
-}
 
-int		main(void)
+
+
+int	main(void)
 {
-	t_point	point;
-	set_point(&point);
+	char *str;
+	char *charset;
+
+	str = "SpLit SPLIT !";
+	charset = "LS";
+
 	return (0);
 }

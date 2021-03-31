@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 08:33:35 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/31 12:03:42 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/17 08:01:03 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/20 08:42:48 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int c;
-
-	c = *a;
-	*a = *b;
-	*b = c;
-}
-
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = size - 1;
-	while (i < (size / 2))
+	while ((s1[i] != '\0') || (s2[i] != '\0'))
 	{
-		ft_swap(&tab[i], &tab[j]);
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 		i++;
-		j--;
 	}
+	return (s1[i] - s2[i]);
 }

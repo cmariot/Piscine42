@@ -6,7 +6,7 @@
 /*   By: cmariot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 09:43:45 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/30 16:32:22 by cmariot          ###   ########.fr       */
+/*   Updated: 2021/03/31 07:49:58 by cmariot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #endif
 
-int	ft_strlen(char *str)
+int						ft_strlen(char *str)
 {
 	int i;
 
@@ -28,11 +28,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *src)
+char					*ft_strdup(char *src)
 {
-	int	src_len;
+	int		src_len;
 	char	*cpy;
-	int	i;
+	int		i;
 
 	src_len = ft_strlen(src);
 	if (!(cpy = malloc(sizeof(char) * (src_len + 1))))
@@ -47,10 +47,10 @@ char	*ft_strdup(char *src)
 	return (cpy);
 }
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct s_stock_str		*ft_strs_to_tab(int ac, char **av)
 {
-	int		i;
-	t_stock_str	*tab;
+	int				i;
+	t_stock_str		*tab;
 
 	if (!(tab = (t_stock_str *)malloc(sizeof(struct s_stock_str) * (ac + 1))))
 		return (NULL);

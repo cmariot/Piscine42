@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmariot <cmariot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: charles <charles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 08:33:35 by cmariot           #+#    #+#             */
-/*   Updated: 2021/03/31 12:03:42 by cmariot          ###   ########.fr       */
+/*   Created: 2021/03/16 08:30:38 by cmariot           #+#    #+#             */
+/*   Updated: 2021/03/20 20:35:57 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int c;
+#include <unistd.h>
 
-	c = *a;
-	*a = *b;
-	*b = c;
-}
-
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_putstr(char *str)
 {
-	int i;
-	int j;
+	int	i;
+	char	c;
 
 	i = 0;
-	j = size - 1;
-	while (i < (size / 2))
+	while (str[i] != '\0')
 	{
-		ft_swap(&tab[i], &tab[j]);
+		c = str[i];
+		write(1, &c, 1);
 		i++;
-		j--;
 	}
 }

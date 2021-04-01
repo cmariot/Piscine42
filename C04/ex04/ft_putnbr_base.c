@@ -49,7 +49,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	long int	long_nb;
 
 	if (ft_check_base(base) == 0)
-		return ;
+		return 0;
 	base_len = 0;
 	while (base[base_len] != '\0')
 		base_len++;
